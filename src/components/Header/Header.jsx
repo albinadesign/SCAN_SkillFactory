@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import Navbar from './Navbar/Navbar';
 import UserBlock from './UserBlock/UserBlock';
+import { useAuth } from '../../context/AuthContext';
 
 import './Header.css';
 
@@ -14,8 +15,9 @@ import scan_logo_white from '../../assets/scan_logo_white.svg';
 import fallout_menu_icon from '../../assets/fallout_menu_icon.svg';
 import close_icon from '../../assets/closing-icon.png';
 
-const Header = ({ isLoggedIn, userName, userPicture, setUserName, setUserPicture, setIsLoggedIn }) => {
-    const [isMenuVisible, setIsMenuVisible] = useState(false);   
+const Header = ({ isLoggedIn, userName, userPicture, setUserName, setUserPicture }) => {
+    const { setIsLoggedIn } = useAuth();
+    const [isMenuVisible, setIsMenuVisible] = useState(false);
     const { width } = useWindowSize();
     const isMobile = width <= 1360;
 
