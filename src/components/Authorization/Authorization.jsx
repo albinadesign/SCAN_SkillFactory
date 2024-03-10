@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext'; 
+import { useAuth } from '../../context/AuthContext'; // Adjust the import path as necessary
 
 import './Authorization.css';
 import authorization_icon_facebook from "../../assets/authorization_icon_facebook.svg";
@@ -9,14 +9,13 @@ import authorization_icon_lock from "../../assets/authorization_icon_lock.svg";
 import authorization_icon_yandex from "../../assets/authorization_icon_yandex.svg";
 import authorization_large_picture from "../../assets/authorization_large_picture.svg";
 
-const Authorization = ({ setIsLoggedIn }) => {
+const Authorization = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const navigate = useNavigate();
-
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, setIsLoggedIn } = useAuth(); // Corrected line
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -148,4 +147,4 @@ const Authorization = ({ setIsLoggedIn }) => {
 }
 
 
-export default Authorization
+export default Authorization;
