@@ -2,16 +2,20 @@
 Описание задания ниже (под инструкцией по скачиванию и установке)
 
 Клонирование репозитория
+
 git clone https://github.com/albinadesign/SCAN_SkillFactory.git
 
 Установка зависимостей
-cd scan
+
+cd SCAN_SkillFactory 
+
 npm install
 
 Сборка проекта
 npm run build
 
 Запуск проекта локально
+
 npm start
 
 Обратите внимание, что в API есть баги:
